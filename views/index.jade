@@ -1,0 +1,72 @@
+extends layout
+
+block content
+  //h1= title
+  //p Welcome to #{title}
+  br
+  .row
+    .col-md-2
+    .container
+    .well.panel.panel-default
+      div(ng-controller ='OperacionesController')
+       
+       h1.panel-heading  Calculadora
+       .panel-body
+       .well
+           
+            input.form-control(type='number',placeholder='Ingresar Primer Número',ng-model="numUno")
+            br
+           
+            input.form-control(type='number',placeholder='Ingresar Segundo Número',ng-model="numDos")
+            br
+            .btn-group(role='group', aria-label='...')
+              button.btn.btn-primary(ng-click="sumar()") +
+              button.btn.btn-primary(ng-click="restar()") -
+              button.btn.btn-primary(ng-click="multiplicar()") *
+              button.btn.btn-primary(ng-click="dividir()") /
+              button.btn.btn-primary(ng-click="clear()") C
+            br
+            br
+          
+            input.form-control(type='number',placeholder='Resultado...',ng-model="resultado",size='5') 
+            br
+  .container
+    .well.panel.panel-default
+        div(ng-controller="TiendaController")
+           h4 Nombre: {{articulo.nombre }}
+           h4 Precio: {{articulo.precio }}
+
+  .container
+   .row
+    .col-md-12
+     div.col-md-8(ng-controller = "TiendaController1", ng-cloak)
+       input.form-control(ng-model="buscar",placeholder="Buscar...")
+       
+       div.well.panel.panel-default(ng-repeat="articulo in articulos | filter: buscar")
+        h1 {{articulo.nombre }}
+        h3 {{articulo.precio  | currency:"€ " :2 }}  
+        p  {{articulo.stock }}
+        IMG.img-responsive.container(ng-src="{{articulo.imagen }}")
+        button.btn.btn-primary(type="button",ng-if="articulo.stock>0") Comprar
+        hr
+     div
+      // Nav tabs
+      ul.nav.nav-tabs(role='tablist')
+        li.active(role='presentation')
+          a(href='#home', aria-controls='home', role='tab', data-toggle='tab') Home
+        li(role='presentation')
+          a(href='#profile', aria-controls='profile', role='tab', data-toggle='tab') Profile
+        li(role='presentation')
+          a(href='#messages', aria-controls='messages', role='tab', data-toggle='tab') Messages
+        li(role='presentation')
+          a(href='#settings', aria-controls='settings', role='tab', data-toggle='tab') Settings
+      // Tab panes
+      .tab-content
+        #home.tab-pane.active(role='tabpanel') ...
+        #profile.tab-pane(role='tabpanel') ...
+        #messages.tab-pane(role='tabpanel') ...
+        #settings.tab-pane(role='tabpanel') ...
+
+    .col-md-2
+
+  

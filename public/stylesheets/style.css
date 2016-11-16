@@ -1,0 +1,16 @@
+body {
+   padding-top: 70px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.pagination li.active, footer.page-footer {
+    background-color: #4f5cad !important;
+}
