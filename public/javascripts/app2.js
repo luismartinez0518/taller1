@@ -1,6 +1,6 @@
 var articulos = [{
-    nombre: 'Canon,  Cámara Digital PowerShot SX410IS',
-    precio: 139.990,
+    nombre: 'FUJIFILM FinePix S8600 - negro - Cámara fotográfica digital',
+    precio: 149.00,
     imagen: 'images/camara.jpg',
     stock: 5
 }, {

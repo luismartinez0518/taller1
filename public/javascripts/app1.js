@@ -1,4 +1,5 @@
 var articulo = {
-	nombre: 'Cámara fotográfica digital',
+	nombre: 'FUJIFILM FinePix S8600 - negro - Cámara fotográfica digital',
 	precio: 149.00
+
 };

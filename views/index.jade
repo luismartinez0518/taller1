@@ -28,10 +28,11 @@ block content
             br
             br
           
-            input.form-control(type='number',placeholder='Resultado...',ng-model="resultado",size='5') 
+            input.form-control(type='text',placeholder='Resultado...',ng-model="resultado",size='5') 
             br
   .container
     .well.panel.panel-default
+   
         div(ng-controller="TiendaController")
            h4 Nombre: {{articulo.nombre }}
            h4 Precio: {{articulo.precio }}
@@ -39,34 +40,37 @@ block content
   .container
    .row
     .col-md-12
-     div.col-md-8(ng-controller = "TiendaController1", ng-cloak)
-       input.form-control(ng-model="buscar",placeholder="Buscar...")
-       
-       div.well.panel.panel-default(ng-repeat="articulo in articulos | filter: buscar")
-        h1 {{articulo.nombre }}
-        h3 {{articulo.precio  | currency:"€ " :2 }}  
-        p  {{articulo.stock }}
-        IMG.img-responsive.container(ng-src="{{articulo.imagen }}")
-        button.btn.btn-primary(type="button",ng-if="articulo.stock>0") Comprar
-        hr
-     div
+      div
+      
       // Nav tabs
       ul.nav.nav-tabs(role='tablist')
         li.active(role='presentation')
-          a(href='#home', aria-controls='home', role='tab', data-toggle='tab') Home
+          a(href='#home', aria-controls='home', role='tab', data-toggle='tab') Articulos
         li(role='presentation')
-          a(href='#profile', aria-controls='profile', role='tab', data-toggle='tab') Profile
+          a(href='#profile', aria-controls='profile', role='tab', data-toggle='tab') Detalles
         li(role='presentation')
           a(href='#messages', aria-controls='messages', role='tab', data-toggle='tab') Messages
-        li(role='presentation')
-          a(href='#settings', aria-controls='settings', role='tab', data-toggle='tab') Settings
+       
       // Tab panes
       .tab-content
-        #home.tab-pane.active(role='tabpanel') ...
-        #profile.tab-pane(role='tabpanel') ...
-        #messages.tab-pane(role='tabpanel') ...
-        #settings.tab-pane(role='tabpanel') ...
-
+        #home.tab-pane.active(role='tabpanel')  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde nemo eius minima ratione aliquam harum ad quo, consequuntur provident. Error vel minima quasi quo nam, quod quibusdam facere earum eveniet.
+        #profile.tab-pane(role='tabpanel')  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet nostrum quos a, magni error explicabo repudiandae in labore sunt commodi quo distinctio voluptatibus expedita. Ut ad autem blanditiis voluptate omnis!
+        #messages.tab-pane(role='tabpanel')  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos temporibus magni dolor, necessitatibus eos adipisci ipsum! Adipisci facere explicabo quidem dicta qui, accusamus, temporibus corporis officia obcaecati itaque laboriosam dolorum?
+      
+     div.col-md-8(ng-controller = "TiendaController1", ng-cloak)
+       input.form-control(type="text",ng-model="buscar",placeholder="Buscar...")
+       
+       div.well(ng-repeat="articulo in articulos | filter: buscar")
+        
+        h2 {{articulo.nombre }} 
+        h3 Precio: {{articulo.precio  | currency:"€ " :2 }} 
+      
+        p  No. {{articulo.stock }}
+        IMG.img-responsive.container(ng-src="{{articulo.imagen }}")
+        button.btn.btn-primary(type="button",ng-if="articulo.stock>0") Comprar
+        hr
+   
+    hr
     .col-md-2
 
   

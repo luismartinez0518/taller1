@@ -1,14 +1,17 @@
 doctype html
+
 html(ng-app='taller1')
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/vendor.min.css')
+    //link(href='//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet')
+
   body
     nav.navbar.navbar-inverse
       .container-fluid
         .navbar-header
-          a.navbar-brand(href='#') AngularApp
+          a.navbar-brand(href='#') AngularApp Taller 1
         ul.nav.navbar-nav
           li.active
             a(href='#') Home
@@ -25,7 +28,7 @@ html(ng-app='taller1')
         .row
           .col.l6.s12
             h5.white-text Taller AngularJS
-            p.grey-text.text-lighten-4 You can use rows and columns here to organize your footer content.
+            p.grey-text.text-lighten-4 
           .col.l4.offset-l2.s12
             h5.white-text Links
             
@@ -41,5 +44,9 @@ html(ng-app='taller1')
   script(src='/javascripts/jsonBooks.js')
   script(src='/javascripts/app.js')
   script(src='/javascripts/controllers.js')
-   
+  script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js')
+  script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js')
+  script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js')
+  script(src='//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.2.0.js')
+  script(src='example.js')
     
